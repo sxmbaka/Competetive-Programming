@@ -1,3 +1,6 @@
 # ignore exe files
 *.exe
-codeforces/.cph
+codeforces/.cph/
+codechef/.cph/
+*.bin
+tcs and bin/
