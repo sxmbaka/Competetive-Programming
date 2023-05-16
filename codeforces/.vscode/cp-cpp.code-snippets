@@ -20,7 +20,7 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"using namespace std;",
-			"#define MOD 10e9+7",
+			"#define MOD 1000000007",
 			"#define ll long long",
 			"#define py cout << \"YES\" << endl",
 			"#define pn cout << \"NO\" << endl",
@@ -46,7 +46,7 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"using namespace std;",
-			"#define MOD 10e9+7",
+			"#define MOD 1000000007",
 			"#define ll long long",
 			"#define py cout << \"YES\" << endl",
 			"#define pn cout << \"NO\" << endl",
