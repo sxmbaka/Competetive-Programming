@@ -37,8 +37,9 @@ void solve()
         }
         m2[curr] = max(m2[curr], cmax);
     }
-    for (auto i : m1) cout << i.first << " " << i.second << endl;
-    for (auto i : m2) cout << i.first << " " << i.second << endl;
+    for (auto i : m1) ans = max(ans, i.second + m2[i.first]);
+    for (auto i : m2) ans = max(ans, i.second + m1[i.first]);
+    cout << ans << endl;
 }
 
 int main()
