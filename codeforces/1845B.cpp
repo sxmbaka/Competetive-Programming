@@ -2,37 +2,22 @@
 using namespace std;
 #define MOD 1000000007
 #define ll long long
+#define f first
+#define s second
 #define py cout << "YES" << endl
 #define pn cout << "NO" << endl
 #define fr (x) for (int i = 0; i < x; i++)
 
-int shortest_distance_between_points(const std::pair<int, int>& A, const std::pair<int, int>& B, const std::pair<int, int>& P) {
-    int dx = std::abs(B.first - A.first);
-    int dy = std::abs(B.second - A.second);
-
-    int dx1 = std::abs(P.first - A.first);
-    int dy1 = std::abs(P.second - A.second);
-
-    if (dx > dy) {
-        return dx1 + std::abs(dy - dy1);
-    } else if (dy > dx) {
-        return dy1 + std::abs(dx - dx1);
-    } else {
-        return dx1;
-    }
+ll manhattan(pair<int, int> a, pair<int, int> b)
+{
+    return abs(a.f - b.f) + abs(a.s - b.s);
 }
 
 void solve()
 {
     pair<int, int> a, b, c;
-    cin >> a.first >> a.second >> b.first >> b.second >> c.first >> c.second;
-    // pair<int, int> d1, d2;
-    // d1.first = a.first;
-    // d1.second = b.second;
-    // d2.first = b.first;
-    // d2.second = a.second;
-    // if (a.first < d1)
-    cout << shortest_distance_between_points(b, c, a) << endl;
+    cin >> a.f >> a.s >> b.f >> b.s >> c.f >> c.s;
+    cout << ((manhattan(a, b) + manhattan(a, c) - manhattan(b, c)) / 2) + 1 << endl;
 }
 
 int main()
