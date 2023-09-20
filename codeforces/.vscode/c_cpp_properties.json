@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${C:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include}"
+                "C:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include"
             ],
             "defines": [
                 "_DEBUG",
@@ -14,7 +14,7 @@
             "compilerPath": "C:/MinGW/bin/g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "windows-gcc-x64"
         }
     ],
     "version": 4
