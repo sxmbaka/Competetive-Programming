@@ -16,6 +16,7 @@ void solve()
     fr(n)
     {
         cin >> a[i];
+        
     }
     ll ans = 0;
     for (int i = 0; i < n; i++)
