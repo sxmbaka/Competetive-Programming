@@ -9,25 +9,21 @@ using namespace std;
 #define fr(x) for (int i = 0; i < x; i++)
 
 void solve()
-{
-    ll n = 0, k = 0;
-    cin >> n >> k;
-    ll a[n];
-    fr(n)
-    {
-        cin >> a[i];
-        
-    }
-    ll ans = 0;
+{shell
+    int n;
+    cin >> n;
+    vector<int> arr(n);
     for (int i = 0; i < n; i++)
-    {
-        if (a[i] > k)
-        {
-            ans += a[i] - k;
-            a[i + 1] += a[i] - k;
+        cin >> arr[i];
+    unordered_map<int, int> mp;
+    for (int i = 0; i < n; i++)
+        mp[arr[i]]++;
+    for (auto i : mp)  {
+        if (i.second == 1) {
+            cout << -1 << endl;
+            return;
         }
     }
-    cout << ans << endl;
 }
 
 int main()

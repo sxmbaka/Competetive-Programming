@@ -3,5 +3,6 @@
         "ostream": "cpp",
         "iostream": "cpp"
     },
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "cph.general.saveLocation": ""
 }
