@@ -9,7 +9,7 @@ using namespace std;
 #define fr(x) for (int i = 0; i < x; i++)
 
 void solve()
-{shell
+{
     int n;
     cin >> n;
     vector<int> arr(n);
