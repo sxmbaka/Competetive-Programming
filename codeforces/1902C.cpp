@@ -8,15 +8,20 @@ using namespace std;
 #define pn cout << "NO" << endl
 #define fr (x) for (int i = 0; i < x; i++)
 
+ll gcd(ll a, ll b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
 void solve()
 {
-    int n;
+    ll n;
     cin >> n;
-    vector<int> arr(n);
-    unordered_set<int> s;
-    for (int i = 0; i < n; i++) {
+    vector<ll> arr(n);
+    for (ll i = 0; i < n; i++) {
         cin >> arr[i];
-        s.insert(arr[i]);
     }
     if (n == 1)
     {
@@ -24,26 +29,22 @@ void solve()
         return;
     }
     sort(begin(arr), end(arr));
-    int x = abs(arr[0] - arr[n - 1]);
+    ll x = abs(arr[0] - arr[n - 1]);
     for (ll i = 1; i < n - 1; i++)
-        x = __gcd(x, abs(arr[i] - arr[n - 1]));
-    ll extra = arr[n - 1];
-    while (true) {
-        ll chance = extra - x;
-        if (s.find(chance) == s.end() or chance < arr.front()) {
-            extra = chance;
-            break;
+        x = gcd(x, abs(arr[i] - arr[n - 1]));
+    ll extra = arr[n - 1] - x;
+    for (ll i = n - 2; i >= 0; i--) {
+        if (arr[i] == extra) {
+            extra -= x;
         }
-        extra -= x;
+        else break;
     }
-    // cout << x << " " << extra << endl;
     arr.push_back(extra);
     ll ans = 0;
     for (ll i = 0; i < n + 1; i++) {
-        ans += abs(arr[i] - arr[n - 1]) / x;
+        ans += (arr[n - 1] - arr[i]) / x;
     }
     cout << ans << endl;
-
 }
 
 int main()
